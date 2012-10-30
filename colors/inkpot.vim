@@ -140,7 +140,7 @@ if has("gui_running")
 
         hi MatchParen   gui=NONE      guifg=#cfbfad   guibg=#4e4e8f
     endif
-    if v:version >= 730
+    if v:version >= 703
         hi Conceal      gui=NONE      guifg=#c080d0   guibg=NONE
     endif
 else
