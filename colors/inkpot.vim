@@ -123,6 +123,7 @@ if has("gui_running")
     hi doxygenSmallSpecial          gui=NONE guifg=#fdd090   guibg=NONE
     hi doxygenSpecial               gui=NONE guifg=#fdd090   guibg=NONE
     hi doxygenComment               gui=NONE guifg=#ad7b20   guibg=NONE
+    hi doxygenBody                  gui=NONE guifg=LightBlue guibg=NONE
     hi doxygenSpecial               gui=NONE guifg=#fdab60   guibg=NONE
     hi doxygenSpecialMultilineDesc  gui=NONE guifg=#ad600b   guibg=NONE
     hi doxygenSpecialOnelineDesc    gui=NONE guifg=#ad600b   guibg=NONE
@@ -202,6 +203,11 @@ else
     exec "hi Type           cterm=NONE   ctermfg=" . <SID>X(71) . " ctermbg=" . "NONE"
     exec "hi Underlined     cterm=BOLD   ctermfg=" . <SID>X(77) . " ctermbg=" . "NONE"
     exec "hi TaglistTagName cterm=BOLD   ctermfg=" . <SID>X(39) . " ctermbg=" . "NONE"
+
+    exec "hi doxygenBrief              cterm=BOLD  ctermfg=Cyan      ctermbg=NONE"
+    exec "hi doxygenParamName          cterm=BOLD  ctermfg=LightGrey ctermbg=NONE"
+    exec "hi doxygenBody               cterm=NONE  ctermfg=LightBlue ctermbg=NONE"
+    exec "hi doxygenSpecialOnelineDesc cterm=NONE  ctermfg=DarkCyan  ctermbg=NONE"
 
     if v:version >= 700
         exec "hi Pmenu          cterm=NONE   ctermfg=" . <SID>X(87) . " ctermbg=" . <SID>X(82)
