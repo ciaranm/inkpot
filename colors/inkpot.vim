@@ -4,7 +4,8 @@
 " Homepage:   http://github.com/ciaranm/inkpot/
 "
 " This should work in the GUI, rxvt-unicode (88 colour mode) and xterm (256
-" colour mode). It won't work in 8/16 colour terminals.
+" colour mode). There is also a mode for 8- and 16-colour terminals, but they
+" don't work as well.
 "
 " To use a black background, :let g:inkpot_black_background = 1
 
@@ -144,7 +145,7 @@ if has("gui_running")
         hi Conceal      gui=NONE      guifg=#c080d0   guibg=NONE
         hi ColorColumn  gui=NONE                      guibg=#2e2e2e
     endif
-else
+elseif &t_Co >= 88
     if ! g:inkpot_black_background
         exec "hi Normal         cterm=NONE   ctermfg=" . <SID>X(79) . " ctermbg=" . <SID>X(80)
     else
@@ -218,6 +219,77 @@ else
     if v:version >= 703
         exec "hi Conceal      cterm=NONE      ctermfg=" . <SID>X(55) . " ctermbg=" . "NONE"
         exec "hi ColorColumn  cterm=NONE      ctermbg=" . <SID>X(81)
+    endif
+else
+    hi Normal         cterm=NONE   ctermfg=White ctermbg=Black
+
+    hi IncSearch      cterm=BOLD   ctermfg=Black ctermbg=Yellow
+    hi Search         cterm=NONE   ctermfg=Black ctermbg=Brown
+    hi ErrorMsg       cterm=BOLD   ctermfg=Black ctermbg=DarkRed
+    hi WarningMsg     cterm=BOLD   ctermfg=Black ctermbg=Brown
+    hi ModeMsg        cterm=BOLD   ctermfg=DarkBlue ctermbg=NONE
+    hi MoreMsg        cterm=BOLD   ctermfg=DarkBlue ctermbg=NONE
+    hi Question       cterm=BOLD   ctermfg=Brown ctermbg=NONE
+
+    hi StatusLine     cterm=BOLD   ctermfg=White ctermbg=DarkGray
+    hi User1          cterm=BOLD   ctermfg=Green ctermbg=DarkGray
+    hi User2          cterm=BOLD   ctermfg=DarkCyan ctermbg=DarkGray
+    hi StatusLineNC   cterm=NONE   ctermfg=LightGray ctermbg=DarkGray
+    hi VertSplit      cterm=NONE   ctermfg=LightGray ctermbg=DarkGray
+
+    hi WildMenu       cterm=BOLD   ctermfg=LightGray ctermbg=DarkBlue
+
+    hi MBENormal                   ctermfg=LightGray ctermbg=DarkGray
+    hi MBEChanged                  ctermfg=White ctermbg=DarkGray
+    hi MBEVisibleNormal            ctermfg=LightBlue ctermbg=DarkGray
+    hi MBEVisibleChanged           ctermfg=DarkBlue ctermbg=DarkGray
+
+    hi DiffText       cterm=NONE   ctermfg=White ctermbg=DarkMagenta
+    hi DiffChange     cterm=NONE   ctermfg=White ctermbg=DarkBlue
+    hi DiffDelete     cterm=NONE   ctermfg=White ctermbg=DarkRed
+    hi DiffAdd        cterm=NONE   ctermfg=White ctermbg=DarkGreen
+
+    hi Folded         cterm=NONE   ctermfg=White ctermbg=DarkBlue
+    hi FoldColumn     cterm=NONE   ctermfg=DarkCyan ctermbg=Black
+
+    hi Directory      cterm=NONE   ctermfg=Green ctermbg=NONE
+    hi LineNr         cterm=NONE   ctermfg=DarkCyan ctermbg=Black
+    hi NonText        cterm=BOLD   ctermfg=DarkCyan ctermbg=NONE
+    hi SpecialKey     cterm=BOLD   ctermfg=DarkMagenta ctermbg=NONE
+    hi Title          cterm=BOLD   ctermfg=DarkRed ctermbg=NONE
+    hi Visual         cterm=NONE   ctermfg=White ctermbg=DarkBlue
+
+    hi Comment        cterm=NONE   ctermfg=Brown ctermbg=NONE
+    hi Constant       cterm=NONE   ctermfg=Yellow ctermbg=NONE
+    hi String         cterm=NONE   ctermfg=Yellow ctermbg=DarkGray
+    hi Error          cterm=NONE   ctermfg=White ctermbg=DarkRed
+    hi Identifier     cterm=NONE   ctermfg=Brown ctermbg=NONE
+    hi Ignore         cterm=NONE
+    hi Number         cterm=NONE   ctermfg=Red ctermbg=NONE
+    hi PreProc        cterm=NONE   ctermfg=DarkGreen ctermbg=NONE
+    hi Special        cterm=NONE   ctermfg=DarkMagenta ctermbg=NONE
+    hi SpecialChar    cterm=NONE   ctermfg=Magenta ctermbg=DarkGray
+    hi Statement      cterm=NONE   ctermfg=DarkCyan ctermbg=NONE
+    hi Todo           cterm=BOLD   ctermfg=Black ctermbg=LightGray
+    hi Type           cterm=NONE   ctermfg=Magenta ctermbg=NONE
+    hi Underlined     cterm=BOLD   ctermfg=Yellow ctermbg=NONE
+    hi TaglistTagName cterm=NONE   ctermfg=DarkCyan ctermbg=NONE
+
+    if v:version >= 700
+        hi Pmenu          cterm=NONE   ctermfg=LightGray ctermbg=DarkGray
+        hi PmenuSel       cterm=BOLD   ctermfg=LightGray ctermbg=DarkBlue
+        hi PmenuSbar      cterm=BOLD   ctermfg=LightGray ctermbg=DarkCyan
+        hi PmenuThumb     cterm=BOLD   ctermfg=LightGray ctermbg=DarkCyan
+
+        hi SpellBad       cterm=NONE ctermbg=DarkRed
+        hi SpellRare      cterm=NONE ctermbg=DarkRed
+        hi SpellLocal     cterm=NONE ctermbg=Brown
+        hi SpellCap       cterm=NONE ctermbg=Blue
+        hi MatchParen     cterm=NONE ctermbg=Cyan ctermfg=DarkGreen
+    endif
+    if v:version >= 703
+        hi Conceal      cterm=NONE      ctermfg=DarkMagenta ctermbg=NONE
+        hi ColorColumn  cterm=NONE      ctermbg=DarkGray
     endif
 endif
 
