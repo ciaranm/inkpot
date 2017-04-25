@@ -91,7 +91,7 @@ if has("gui_running")
     hi Directory      gui=NONE   guifg=#00ff8b   guibg=NONE
     hi LineNr         gui=NONE   guifg=#8b8bcd   guibg=#2e2e2e
     hi NonText        gui=BOLD   guifg=#8b8bcd   guibg=NONE
-    hi SpecialKey     gui=BOLD   guifg=#ab60ed   guibg=NONE
+    hi SpecialKey     gui=BOLD   guifg=#3b205d   guibg=NONE
     hi Title          gui=BOLD   guifg=#af4f4b   guibg=NONE
     hi Visual         gui=NONE   guifg=#eeeeee   guibg=#4e4e8f
 
