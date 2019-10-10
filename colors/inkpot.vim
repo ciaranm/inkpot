@@ -46,7 +46,7 @@ if ! exists("g:inkpot_black_background")
     let g:inkpot_black_background = 0
 endif
 
-if has("gui_running")
+if has("gui_running") || (exists('+termguicolors') && &termguicolors)
     if ! g:inkpot_black_background
         hi Normal         gui=NONE   guifg=#cfbfad   guibg=#1e1e27
     else
